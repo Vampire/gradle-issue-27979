@@ -1,0 +1,3 @@
+releasePaperwork {
+    tagPattern = "v%s"
+}

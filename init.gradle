@@ -1,0 +1,20 @@
+initscript {
+   repositories {
+      gradlePluginPortal()
+   }
+   dependencies {
+      classpath "tech.harmonysoft:gradle-release-paperwork:1.8.0"
+   }
+}
+
+allprojects {
+    apply plugin: tech.harmonysoft.oss.gradle.release.paperwork.GradleReleasePaperworkPlugin
+}
+
+projectsEvaluated {
+    rootProject.allprojects { project ->
+        releasePaperwork {
+            releaseNotesFile = "some-file" // plugin configuration works here
+        }
+    }
+}
